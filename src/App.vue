@@ -1,47 +1,59 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="Parabens, conseguiste" />
+  <div class="wrapper">
+    <div class="information">
+      <div class="locationWrapper">
+      <img src="./assets/icons/location.svg" class="iconLocation" />
+      <span class="textLocation">Braga, Portugal</span>
+      </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <div class="buttons">
+      <div class="searchWrapper">
+        <button class="searchBtn">
+          <img src="./assets/icons/search.svg" />
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
+<script setup>
+
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
+.wrapper{
+  width: 23rem;
+  height: 27rem;
+  background-color: white;
+  border-radius: 8%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  order:5;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.locationWrapper{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.iconLocation{
+  width: 1.5rem;
+  height: 1.5rem;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.textLocation{
+  font-size: large;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.textLocation:hover{
+  font-style: italic;
+}
+
+.buttons{
+  display: flex;
+  justify-content: end;
 }
 </style>
